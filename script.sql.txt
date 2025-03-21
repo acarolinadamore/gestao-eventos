@@ -1,0 +1,55 @@
+-- Criar a tabela de eventos
+CREATE TABLE eventos (
+    id SERIAL PRIMARY KEY,
+    titulo VARCHAR(255) NOT NULL,
+    descricao TEXT,
+    data_evento DATE NOT NULL,
+    local VARCHAR(255) NOT NULL,
+    criado_em TIMESTAMP DEFAULT NOW()
+);
+
+-- Criar a tabela de participantes
+CREATE TABLE participantes (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    telefone VARCHAR(20),
+    tamanho_camiseta VARCHAR(5),  -- Pode ser 'P', 'M', 'G', etc.
+    acompanhante BOOLEAN DEFAULT FALSE,
+    evento_id INT REFERENCES eventos(id) ON DELETE CASCADE
+);
+
+-- Criar a tabela de confirmações de presença (RSVP)
+CREATE TABLE confirmacoes (
+    id SERIAL PRIMARY KEY,
+    participante_id INT REFERENCES participantes(id) ON DELETE CASCADE,
+    evento_id INT REFERENCES eventos(id) ON DELETE CASCADE,
+    confirmado BOOLEAN DEFAULT FALSE,
+    data_confirmacao TIMESTAMP DEFAULT NOW()
+);
+
+INSERT INTO eventos (titulo, descricao, data_evento, local)
+VALUES ('Almoço Empresarial', 'Almoço de negócios no Restaurante SESC', '2024-06-10', 'Restaurante SESC');
+
+SELECT * FROM eventos;
+
+-- Adicionar coluna de hora no evento
+ALTER TABLE eventos ADD COLUMN hora_evento TIME;
+
+-- Adicionar coluna de CPF e observação no participante
+ALTER TABLE participantes ADD COLUMN cpf VARCHAR(14);
+ALTER TABLE participantes ADD COLUMN observacao TEXT;
+
+-- Atualizar registros antigos para garantir que tenham valores padrão
+UPDATE participantes SET cpf = NULL WHERE cpf IS NULL;
+UPDATE participantes SET observacao = NULL WHERE observacao IS NULL;
+
+-- Definir um horário padrão para eventos que não possuem hora definida
+UPDATE eventos SET hora_evento = '00:00' WHERE hora_evento IS NULL;
+
+ALTER TABLE eventos 
+ALTER COLUMN descricao DROP NOT NULL,
+ALTER COLUMN data_evento DROP NOT NULL,
+ALTER COLUMN hora_evento DROP NOT NULL,
+ALTER COLUMN local DROP NOT NULL;
+
