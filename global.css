@@ -23,6 +23,7 @@
         cursor: pointer;
         text-decoration: none; 
         display: inline-block;
+        min-width: 180px;
     }
     
     .btn-evenza:hover {

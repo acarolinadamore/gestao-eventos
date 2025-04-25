@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <label class="form-label">Local</label>
                 <input type="text" name="local" class="form-control">
             </div>
-            <button type="submit" class="btn btn-primary">Cadastrar</button>
+            <button type="submit" class="btn-evenza">Cadastrar</button>
         </form>
         <a href="listar-eventos.php" class="btn btn-secondary mt-3">Voltar</a>
     </div>

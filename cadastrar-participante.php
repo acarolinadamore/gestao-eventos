@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <input type="text" name="cpf" class="form-control">
             </div>
             <div class="mb-3">
-                <label class="form-label">Email</label>
+                <label class="form-label">Email*</label>
                 <input type="email" name="email" class="form-control">
             </div>
             <div class="mb-3">
@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <label class="form-label">Observação</label>
                 <textarea name="observacao" class="form-control"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Cadastrar</button>
+            <button type="submit" class="btn-evenza">Cadastrar</button>
         </form>
         <a href="listar-participantes.php" class="btn btn-secondary mt-3">Voltar</a>
     </div>

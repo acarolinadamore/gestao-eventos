@@ -398,7 +398,7 @@
                     <p>Do convite ao RSVP, passando por confirmações personalizadas e relatórios detalhados, o Evenza oferece tudo que você precisa para gerenciar seus eventos com eficiência.</p>
                 </div>
                 <div class="col-lg-6">
-                    <img src="img/img2.jpg" alt="Gestão de Eventos" class="img-fluid rounded shadow">
+                    <img src="img/img5.jpg" alt="Gestão de Eventos" class="img-fluid rounded shadow">
                 </div>
             </div>
         </div>
@@ -499,7 +499,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <img src="img/img6.jpg" alt="Para quem é o Evenza" class="img-fluid rounded shadow">
+                    <img src="img/img2.jpg" alt="Para quem é o Evenza" class="img-fluid rounded shadow">
                 </div>
             </div>
         </div>
