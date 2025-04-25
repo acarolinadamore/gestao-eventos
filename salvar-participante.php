@@ -5,14 +5,14 @@ if (!$conn) {
     die("Erro ao conectar ao banco de dados.");
 }
 
-// Obtendo dados do formulário
+// Aqui pego os dados do formulário
 $nome = $_POST['nome'];
 $cpf = $_POST['cpf'];
 $email = $_POST['email'];
 $telefone = $_POST['telefone'];
 $observacao = $_POST['observacao'];
 
-// Inserir no banco
+// Aqui insiro no banco
 $query = "INSERT INTO participantes (nome, cpf, email, telefone, observacao) VALUES ($1, $2, $3, $4, $5)";
 $result = pg_query_params($conn, $query, array($nome, $cpf, $email, $telefone, $observacao));
 

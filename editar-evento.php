@@ -1,18 +1,18 @@
 <?php 
-// Conectar ao PostgreSQL
+// Aqui conecta ao PostgreSQL
 $conn = pg_connect("host=localhost dbname=web3-cc user=postgres password=postgres");
 
 if (!$conn) {
     die("Erro ao conectar ao banco de dados.");
 }
 
-// Verifica se o ID foi passado via GET
+// Checa se o ID foi passado via GET
 $id = $_GET['id'] ?? null;
 if (!$id) {
     die("ID do evento não informado.");
 }
 
-// Buscar o evento pelo ID
+// Vai buscar o evento pelo ID
 $query = "SELECT * FROM eventos WHERE id = $1";
 $result = pg_query_params($conn, $query, array($id));
 
@@ -28,12 +28,12 @@ pg_close($conn);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Evento</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="global.css">
 </head>
 <body>    
     <div class="container mt-5">
-        <h2>Editar Evento</h2>
+    <h2 class="yesteryear-regular">Editar Evento</h2>
         <form action="atualizar-evento.php" method="POST">
     <input type="hidden" name="id" value="<?= $row['id'] ?? ''; ?>">
 

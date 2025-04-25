@@ -5,7 +5,7 @@ if (!$conn) {
     die("Erro ao conectar ao banco de dados.");
 }
 
-// Obtém os dados do formulário
+// Pega os dados do formulário
 $id = $_POST['id'];
 $titulo = $_POST['titulo'];
 $descricao = !empty($_POST['descricao']) ? $_POST['descricao'] : null;

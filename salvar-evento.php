@@ -6,13 +6,13 @@ if (!$conn) {
     die("Erro ao conectar ao banco de dados.");
 }
 
-// Obtendo dados do formulário
+// Aqui tenho dados do formulário
 $titulo = $_POST['titulo'];
 $descricao = $_POST['descricao'];
 $data_evento = $_POST['data_evento'];
 $local = $_POST['local'];
 
-// Inserindo no banco
+// Aqui insiro no banco
 $query = "INSERT INTO eventos (titulo, descricao, data_evento, local) VALUES ($1, $2, $3, $4)";
 $result = pg_query_params($conn, $query, array($titulo, $descricao, $data_evento, $local));
 

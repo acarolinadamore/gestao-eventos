@@ -1,12 +1,12 @@
 <?php
-// Conectar ao PostgreSQL
+// Aqui conecta banco de dados
 $conn = pg_connect("host=localhost dbname=web3-cc user=postgres password=postgres");
 
 if (!$conn) {
     die("Erro ao conectar ao banco de dados.");
 }
 
-// Obtém o ID do evento
+// Pega o ID do evento
 $id = $_GET['id'] ?? null;
 if (!$id) {
     die("ID do evento não informado.");

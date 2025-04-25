@@ -17,11 +17,12 @@ pg_close($conn);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Participantes</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="global.css">
 </head>
 <body>
 <?php include 'menu.php'; ?>
     <div class="container mt-5">
-        <h2>Lista de Participantes</h2>
+        <h2 class="yesteryear-regular">Lista de Participantes</h2>
         <table class="table table-striped">
             <thead>
                 <tr>
